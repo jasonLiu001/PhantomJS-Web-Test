@@ -1,10 +1,10 @@
 /**
  *
- * @summary Õâ¸öÀı×ÓÑİÊ¾²Ù×÷¹ı³ÌÈçÏÂ
- * 1).´ò¿ª°Ù¶ÈÊ×Ò³²¢±£´æÊ×Ò³½ØÍ¼
- * 2).ËÑË÷¿òÖĞÊäÈë¹Ø¼ü×Ö"test"
- * 3).µã»÷ËÑË÷°´Å¥²¢µÈ´ıÒ³Ãæ¼ÓÔØÍê³É(¸ù¾İÌØ¶¨µÄÔªËØÊÇ·ñ³öÏÖ)
- * 4).±£´æËÑË÷½á¹û½ØÍ¼
+ * @summary è¿™ä¸ªä¾‹å­æ¼”ç¤ºæ“ä½œè¿‡ç¨‹å¦‚ä¸‹
+ * 1).æ‰“å¼€ç™¾åº¦é¦–é¡µå¹¶ä¿å­˜é¦–é¡µæˆªå›¾
+ * 2).æœç´¢æ¡†ä¸­è¾“å…¥å…³é”®å­—"test"
+ * 3).ç‚¹å‡»æœç´¢æŒ‰é’®å¹¶ç­‰å¾…é¡µé¢åŠ è½½å®Œæˆ(æ ¹æ®ç‰¹å®šçš„å…ƒç´ æ˜¯å¦å‡ºç°)
+ * 4).ä¿å­˜æœç´¢ç»“æœæˆªå›¾
  * */
 var page = require('webpage').create();
 page.settings.userAgent = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.19 (KHTML, like Gecko) Chrome/1.0.154.53 Safari/525.19';
@@ -12,16 +12,16 @@ page.open('http://www.baidu.com', function (status) {
     if (status != "success") {
         console.log('Page loaded failed.');
     } else {
-        //±£´æ°Ù¶ÈÊ×Ò³Í¼Æ¬
+        //ä¿å­˜ç™¾åº¦é¦–é¡µå›¾ç‰‡
         page.render('baidu_homepage.png');
-        //¼ÓÔØjquery½Å±¾µ½Ò³Ãæ
+        //åŠ è½½jqueryè„šæœ¬åˆ°é¡µé¢
         page.includeJs('http://cdn.bootcss.com/zepto/1.2.0/zepto.min.js', function () {
             waitFor(function () {
-                //return¹Ø¼ü×ÖÖ¸Ê¾ÊÇ·ñĞèÒªµÈ´ı¸Ã²Ù×÷ÊÇ·ñÖ´ĞĞÍê³É
+                //returnå…³é”®å­—æŒ‡ç¤ºæ˜¯å¦éœ€è¦ç­‰å¾…è¯¥æ“ä½œæ˜¯å¦æ‰§è¡Œå®Œæˆ
                 return page.evaluate(function () {
-                    //µã»÷ËÑË÷°´Å¥
+                    //ç‚¹å‡»æœç´¢æŒ‰é’®
                     $('#kw').val('test').click();
-                    //Í¨¹ıÄ³¸öÌØ¶¨ÔªËØÊÇ·ñÏÔÊ¾À´¾ö¶¨ÊÇ·ñ½øĞĞÏÂÒ»²½²Ù×÷
+                    //é€šè¿‡æŸä¸ªç‰¹å®šå…ƒç´ æ˜¯å¦æ˜¾ç¤ºæ¥å†³å®šæ˜¯å¦è¿›è¡Œä¸‹ä¸€æ­¥æ“ä½œ
                     return $("#page").is(":visible");
                 });
             }, function () {
