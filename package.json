@@ -1,0 +1,22 @@
+{
+  "name": "testr",
+  "version": "1.0.0",
+  "description": "Chrome中调试PhantomJS脚本\r ================\r 1. [在console中输入__run()不执行处理](#执行__run())",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasonLiu001/PhantomJS-Web-Test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jasonLiu001/PhantomJS-Web-Test/issues"
+  },
+  "homepage": "https://github.com/jasonLiu001/PhantomJS-Web-Test#readme",
+  "dependencies": {
+    "bluebird": "^3.5.0"
+  }
+}
